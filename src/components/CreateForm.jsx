@@ -17,13 +17,10 @@ import { Button } from './ui/button';
 import { CustomFormField } from './FormComponent';
 import { schoolSchema } from '@/lib/schoolSchema';
 import { createSchoolAction } from '@/lib/actions';
-import { toast } from "sonner"
-
-// Optional: For showing success/error messages
-// import { useToast } from '@/components/ui/use-toast';
+import { toast } from "sonner";
 
 function CreateSchoolForm() {
-  // const { toast } = useToast();
+  
   const router = useRouter();
 
   const form = useForm({
@@ -35,43 +32,34 @@ function CreateSchoolForm() {
       state: '',
       contact: '',
       email_id: '',
-      // It's better to use undefined for file inputs, but react-hook-form is robust
       image: undefined,
     },
     
   });
 
-  // This is the updated submission handler
-
   async function onSubmit(values) {
-    // 1. Create a FormData object to handle the file upload
-    const formData = new FormData();
     
-    // 2. Append all form values to the FormData object
-    // We iterate over the values object to do this dynamically
+    const formData = new FormData();
+
     Object.keys(values).forEach(key => {
-      // if (key === 'image') {
-      //   // The 'image' field is a FileList, so we append the first file
-      //   formData.append(key, values.image[0]);
-      // } else {
-      //   formData.append(key, values[key]);
-      // }
+     
       formData.append(key, values[key])
     });
 
-    // 3. Call the server action with the FormData object
+    //  Call the server action with the FormData object
     const result = await createSchoolAction(formData);
 
-    toast("New School successfully created.")
+   
 
-    // 4. Handle the structured response from the server action
+    //  Handle the structured response from the server action
     if (result.success) {
-      // toast({ description: 'School created successfully!' }); // Optional success message
+       toast("New School successfully created.")
+     
       router.push('/'); // Redirect only on success
     } else {
       toast("School creation unsuccessful")
       console.error("Failed to create school:", result.error);
-      // toast({ variant: 'destructive', description: result.error }); // Optional error message
+     
     }
   }
 

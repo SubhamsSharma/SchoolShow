@@ -12,7 +12,7 @@ export async function uploadToCloudinaryFromFile(
       {
         folder: opts.folder ?? "schools-images",
         resource_type: "image",
-        // You can also set: use_filename, unique_filename, overwrite, tags, etc.
+    
       },
       (error, result) => {
         if (error || !result) return reject(error);
