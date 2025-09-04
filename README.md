@@ -76,5 +76,5 @@ Open http://localhost:3000 in your browser to view the application.
 Project Walkthrough
 A screen recording of a project walkthrough with audio is available to provide a detailed overview of the application's features and functionality.
 
-[https://www.youtube.com/watch?v=oaF7C6NFZlU]
+[Youtube Link](https://www.youtube.com/watch?v=oaF7C6NFZlU)
 
