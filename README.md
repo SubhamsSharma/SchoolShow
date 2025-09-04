@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+School Submission App
+A simple web application for submitting and displaying school information. The platform allows users to input school details—including name, address, contact information, and an image—via a form. The submitted data is then showcased on a dynamic, clean, and interactive list of school cards.
 
-## Getting Started
+Features
+School Data Submission Form: A user-friendly form to collect essential school information.
 
-First, run the development server:
+Image Upload: Integrated with Cloudinary to handle image uploads for each school.
 
-```bash
+Dynamic School Card Display: A responsive and interactive list of cards, each representing a submitted school with its name, address, city, and image.
+
+Data Validation: Utilizes Zod for robust form data validation, ensuring data integrity.
+
+Persistent Storage: Data is stored in a PostgreSQL database, managed by Prisma.
+
+Technologies Used
+Framework: Next.js 15
+
+Database: PostgreSQL
+
+ORM: Prisma
+
+Form Validation: Zod
+
+Image Handling: Cloudinary
+
+Deployment: Render
+
+Getting Started
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+Prerequisites
+You will need the following installed:
+
+Node.js (v18 or higher)
+
+npm or yarn
+
+A PostgreSQL database instance
+
+A Cloudinary account
+
+Installation
+Clone the repository:
+
+git clone [https://github.com/SubhamsSharma/SchoolShow/](https://github.com/SubhamsSharma/SchoolShow/)
+
+cd your-repo-name
+
+Install the dependencies:
+
+npm install
+
+Create a .env file in the root directory and add your environment variables. You will need to configure your database and Cloudinary credentials.
+
+# Database connection string
+DATABASE_URL="postgresql://username:password@host:port/database"
+
+# Cloudinary credentials
+CLOUDINARY_CLOUD_NAME="your_cloudinary_cloud_name"
+
+CLOUDINARY_API_KEY="your_cloudinary_api_key"
+
+CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
+
+Push the Prisma schema to your database and generate the Prisma client:
+
+npx prisma db push
+npx prisma generate
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser to view the application.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Project Walkthrough
+A screen recording of a project walkthrough with audio is available to provide a detailed overview of the application's features and functionality.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[https://www.youtube.com/watch?v=oaF7C6NFZlU]
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
